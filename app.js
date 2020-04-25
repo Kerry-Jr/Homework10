@@ -106,7 +106,7 @@ async function addDepartment() {
       function(err, res){
         connection.query("SELECT * FROM departments", function(err, res){
           console.table(res); 
-          start(); 
+          mainMenu(); 
         })
       }
     )
@@ -153,14 +153,49 @@ function addRole() {
       function (err, res){
         if (err) throw err;
         //const id = res.insertId;
-        start(); 
+        mainMenu(); 
       }
     )
   })
   })
 }
 function addEmployee() {
+  inquirer 
+  .prompt ([ 
+    {
+      type: "input", 
+      message: "First Name?",
+      name: "first_name",
+    },
+    {
+      type: "input", 
+      message: "Last Name?",
+      name: "last_name"
+    },
+    {
+      type: "list",
+      message: "What is the employee's role?",
+      name: "role_id", 
+      choices: [1,2,3]
+    },
+    {
+      type: "input", 
+      message: "Who is their manager?",
+      name: "manager_id"
+    }
+  ])
+  .then (function(res){
+    const query = connection.query(
+      "INSERT INTO employees SET ?", 
+     res,
+      function(err, res) {
+        if (err) throw err;
+        console.table( "The new employee was added!\n");
 
+        mainMenu(); 
+      }
+    );    
+  })
 }
 function updateEmpRole() {
 
