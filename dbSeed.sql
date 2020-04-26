@@ -16,7 +16,7 @@ INSERT INTO  employees (first_name, last_name, role_id, manager_id)
 VALUES ("Kerry","Smith",2, null),
        ("Musa","Akbari",2, null),
        ("Barack","Obama",4, null),
-       ("Joe","Blow", 3, 3);
+       ("Joe","Biden", 3, 3);
       
 SELECT * FROM departments;
 SELECT * FROM roles;
