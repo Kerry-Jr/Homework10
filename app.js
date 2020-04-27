@@ -88,6 +88,7 @@ async function viewEmployees() {
     console.log(error)
   }
 }
+
 function addDepartment() {
   inquirer
       .prompt(
@@ -110,12 +111,46 @@ function addDepartment() {
 }
 
 function addRole() {
-
+  inquirer
+    .prompt([
+      {
+        type: 'input',
+        name: 'title',
+        message: 'What is the new title of this role?'
+      },
+      {
+        type: 'input',
+        name: 'salary',
+        message: 'Please add salary for role.' 
+      },
+      {
+        type: 'input',
+        name: 'department_id',
+        message: 'Which dept id would you to add to this role?'
+      }
+    ]).then(function ({ title, salary, department_id }) {
+      // let deptIndex = department_id.indexOf(department_id);
+      connection.query(`INSERT INTO roles (title, salary, department_id) VALUES ('${title}', '${salary}', ${department_id})`, function (err, data) {
+        if (err) throw err;
+        console.table(${title});
+        
+        // console.log(`New role successfully added  New Title: ('${title}') New Salary: ${salary}  Added to department ${department_id}.`);
+        // console.log(`...returning to main menu`)
+        mainMenu();
+    })
+})
 }
+
 
 async function addEmployee() {
- 
+
 }
+ 
+
+
+
+
+
 async function updateEmpRole() {
  
 }

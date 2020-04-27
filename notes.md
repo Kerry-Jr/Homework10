@@ -53,4 +53,27 @@ Prompt user to update information about employee.
 
 
 
-
+//didn't work, getting console logs but breaks after that 5pm sunday
+//(async answers => {
+      console.log(answers);
+      console.log(answers.title);
+      console.log(answers.salary);
+      console.log(answers.department_id);
+      let userTitle = answers.title;
+      let userSalary = answers.salary;
+      let userDepartment = answers.department_id;
+      const query = connection.query('INSERT INTO roles SET ?',
+      {
+        title: userTitle,
+        salary: userSalary,
+        department_id: userDepartment
+      },
+      function(err,res) {
+        if (err) throw err;
+        console.table(res);
+        mainMenu();
+      });
+      try { 
+      } catch (e) {
+        mainMenu();
+      }
