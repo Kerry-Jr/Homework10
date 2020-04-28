@@ -76,7 +76,7 @@ async function viewRoles() {
     console.log(error)
   }
 }
-/
+
 async function viewEmployees() {
   try {
     const query = 'SELECT * FROM employees';
