@@ -129,10 +129,6 @@ function addRole() {
         message: 'Which dept id would you to add to this role?'
       }
     ]).then(function (answers) {
-      // let deptIndex = department_id.indexOf(department_id);
-      console.log(answers.title);
-      console.log(answers.salary);
-      console.log(answers.department_id)
       connection.query(`INSERT INTO roles (title, salary, department_id) VALUES ('${answers.title}', '${answers.salary}', ${answers.department_id})`, function (err, data) {
         if (err) throw err;
         viewRoles();
