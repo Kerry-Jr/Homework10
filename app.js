@@ -55,7 +55,6 @@ function mainMenu() {
   })
 }
 
-
 async function viewDepartments() {
   try {
     const query = 'SELECT * FROM departments';
