@@ -26,7 +26,7 @@
 ##### Email
 7.)[My Email. Please click me to send a message](mailto:kerrysfs@gmail.com)
 
-![Image of Kerry's App](./assets/image/app.gif)
+![Image of Kerry's App](./Assets/image/app.gif)
 
 
 [Github repo link](https://github.com/Kerry-Jr "Your github repo")
