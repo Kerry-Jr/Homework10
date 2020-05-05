@@ -97,9 +97,9 @@ function addDepartment() {
         type: 'input'
       }
     ).then(function ({ deptTitle }) {
-      connection.query(`INSERT INTO departments (deptTitle) VALUES ('${deptTitle}')`, function (err, data) {
+      connection.query(`INSERT INTO departments (deptName) VALUES ('${deptTitle}')`, function (err, data) {
         if (err) throw err;
-        viewDepartments();
+        // viewDepartments();
         console.log(`NEW DEPARTMENT HAS BEEN SUCCESSFULLY ADDED`)
         mainMenu();
       })
@@ -131,7 +131,7 @@ function addRole() {
     ]).then(function (answers) {
       connection.query(`INSERT INTO roles (title, salary, department_id) VALUES ('${answers.title}', '${answers.salary}', ${answers.department_id})`, function (err, data) {
         if (err) throw err;
-        viewRoles();
+        // viewRoles();
         mainMenu();
       })
     })
@@ -165,7 +165,7 @@ function addEmployee() {
     .then(function (answers) {
        
       connection.query(`INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES ('${answers.first_name}', '${answers.last_name}', '${answers.role_id}', '${answers.manager_id}')`),
-      viewEmployees();
+      // viewEmployees();
       mainMenu();
     })
 }
@@ -194,7 +194,7 @@ async function updateEmpRole() {
 
             function (err, res) {
               if (err) throw err;
-              viewEmployees();
+              // viewEmployees();
               console.log(`Employee's role has been updated successfully. Thank You`);
               mainMenu();
             }
