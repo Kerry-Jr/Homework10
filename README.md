@@ -8,7 +8,7 @@
 # Table of contents:
 1. Description
 1. Installation
-1. Usagef
+1. Usage
 1. Test
 1. Contributors
 ##### Description
